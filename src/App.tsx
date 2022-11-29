@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './pages/layout/Layout'
 import Build from './pages/build/build'
-import MyCard from './pages/mycard/mycard'
+import MyCart from './pages/mycart/mycart'
 
 interface PC {
   name: string;
@@ -46,7 +46,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Build />} />
-            <Route path="mycard" element={<MyCard />} />
+            <Route path="mycart" element={<MyCart />} />
           </Route>
         </Routes>
       </PcContext.Provider>

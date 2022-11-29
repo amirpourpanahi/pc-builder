@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {PcContext} from '../../App'
 import { useNavigate } from 'react-router-dom';
 
-const MyCard = () => {
+const MyCart = () => {
   const { 
     selectedMotherboard,
     selectedCpu,
@@ -16,7 +16,7 @@ const MyCard = () => {
 
   return (
     <>
-      <h1>MyCard</h1>
+      <h1>My Cart</h1>
       <table>
         <tbody>
           <tr>
@@ -56,4 +56,4 @@ const MyCard = () => {
   );
 };
 
-export default MyCard;
+export default MyCart;
