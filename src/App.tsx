@@ -1,40 +1,41 @@
-import React, { createContext, useState, useContext, useMemo } from 'react';
+import React, { createContext, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './pages/layout/Layout'
 import Build from './pages/build/build'
 import MyCart from './pages/mycart/mycart'
+import IPcPart from './interfaces/i-pc-part'
+import IPC from './interfaces/i-pc'
 
-interface PC {
-  name: string;
-  brand: string;
-  price: string;
-}
-
-const pc: PC = {
+const pcPart: IPcPart = {
   name: '',
   brand: '',
   price: ''
 }
 
 export const PcContext = createContext({
-  selectedMotherboard: pc,
-  selectedCpu: pc,
-  selectedRam: pc,
+  arrPCs: [] as IPC[],
+  selectedMotherboard: pcPart,
+  selectedCpu: pcPart,
+  selectedRam: pcPart,
+  setArrPCs: (a:any) => {},
   setSelectedMotherboard: (a:any) => {},
   setSelectedCpu: (a:any) => {},
   setSelectedRam: (a:any) => {}
 });
 
 const App = () => {
-  const [selectedMotherboard, setSelectedMotherboard] = useState(pc);
-  const [selectedCpu, setSelectedCpu] = useState(pc);;
-  const [selectedRam, setSelectedRam] = useState(pc);;
+  const [arrPCs, setArrPCs] = useState([] as IPC[]);
+  const [selectedMotherboard, setSelectedMotherboard] = useState(pcPart);
+  const [selectedCpu, setSelectedCpu] = useState(pcPart);;
+  const [selectedRam, setSelectedRam] = useState(pcPart);;
 
   const value = {
+    arrPCs,
     selectedMotherboard, 
     selectedCpu,
     selectedRam,
+    setArrPCs,
     setSelectedMotherboard,
     setSelectedCpu,
     setSelectedRam

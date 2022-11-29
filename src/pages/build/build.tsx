@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
 import {getAllProducts} from '../../services/axios'
 import {PcContext} from '../../App'
+import IPcPart from '../../interfaces/i-pc-part'
 
-const pc = {
+const pcPart: IPcPart = {
   name: '',
   brand: '',
   price: ''
 }
 
 const Build = () => {
-  const [motherboards, setMotherboards] = useState([pc]);
-  const [cpus, setCpus] = useState([pc]);
-  const [rams, setRams] = useState([pc]);
+  const [motherboards, setMotherboards] = useState([pcPart]);
+  const [cpus, setCpus] = useState([pcPart]);
+  const [rams, setRams] = useState([pcPart]);
 
   const { 
     selectedMotherboard,
