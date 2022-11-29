@@ -19,7 +19,7 @@ Route and Context    	src -> App.tsx\
 Get request(axios)		src -> services -> axios.tsx\
 Layout					src -> pages -> Layout -> Layout.tsx\
 Build page				src -> pages -> build -> build.tsx\
-My Card page			src -> pages -> mycard -> mycard.tsx
+My Cart page			src -> pages -> mycart -> mycart.tsx
 
 
 
