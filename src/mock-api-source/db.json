@@ -1,0 +1,83 @@
+{
+  "cpu": [
+    { 
+      "name": "AMD Ryzen™ 9 7950X 16-Core",
+      "brand": "AMD",
+      "price": "$799.99"
+    },
+    { 
+      "name": "Intel Core i9-13900K Desktop Processor 24 cores",
+      "brand": "Intel",
+      "price": "$836.99"
+    },
+    { 
+      "name": "Intel Core i9-12900K Desktop Processor 16",
+      "brand": "Intel",
+      "price": "$747.82"
+    },
+    { 
+      "name": "AMD Ryzen 7 5800X, 8 Cores",
+      "brand": "AMD",
+      "price": "$318.98"
+    },
+    { 
+      "name": "Intel Core i9-7920X, 12 Cores",
+      "brand": "Intel",
+      "price": "$2,650.83"
+    }
+  ],
+  "motherboard": [
+    { 
+      "name": "ASUS ROG Zenith II Extreme Alpha TRX40",
+      "brand": "ASUS",
+      "price": "$1,891.85"
+    },
+    { 
+      "name": "Asus AM4 TUF Gaming X570-Plus (Wi-Fi) ATX",
+      "brand": "ASUS",
+      "price": "$239.99"
+    },
+    { 
+      "name": "GIGABYTE X570SI AORUS PRO AX",
+      "brand": "Gigabyte",
+      "price": "$269.99"
+    },
+    { 
+      "name": "GIGABYTE X570S AORUS Master",
+      "brand": "Gigabyte",
+      "price": "$585.99"
+    },
+    { 
+      "name": "MSI MPG X570 GAMING PLUS Motherboard",
+      "brand": "MSI",
+      "price": "$383.59"
+    }
+  ],
+  "ram": [
+    { 
+      "name": "G.Skill Trident Z5 RGB Series 32GB",
+      "brand": "G.Skill",
+      "price": "$394.33"
+    },
+    { 
+      "name": "Kingston Technology Fury Renegade RGB 32GB",
+      "brand": "Kingston",
+      "price": "$431.49"
+    },
+    { 
+      "name": "PNY XLR8 Gaming MAKO 32GB",
+      "brand": "PNY",
+      "price": "$335.32"
+    },
+    { 
+      "name": "TEAMGROUP T-Force Delta RGB DDR5 Ram 32GB",
+      "brand": "TEAMGROUP",
+      "price": "$627.61"
+    },
+    { 
+      "name": "XPG Lancer DDR5 RGB 6000MHz 32GB",
+      "brand": "XPG",
+      "price": "$309.19"
+    }
+  ]
+}
