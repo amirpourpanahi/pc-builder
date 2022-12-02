@@ -2,19 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+MaterialUI components are added to project: https://mui.com/
 
-In the project directory, you can run:
+Website is responsive according to different screen sizes.
 
-### `npm start`
-
-To build the project please run these commands: (We need two terminal for json-server and application).\
+To build the project please run these commands:\
 npm install\
-npx json-server --watch src/mock-api-source/db.json --port 8000\
-npm start\
+npm start
 
 
-Mock data				src -> mock-api-source -> db.json\
+Mock data				public -> data.json\
 Route and Context    	src -> App.tsx\
 Get request(axios)		src -> services -> axios.tsx\
 Layout					src -> pages -> Layout -> Layout.tsx\
