@@ -1,85 +1,94 @@
-import React, { useContext, useEffect } from 'react';
-import {PcContext} from '../../App'
-import { useNavigate } from 'react-router-dom';
-import IPcPart from '../../interfaces/i-pc-part'
-
-const pcPart: IPcPart = {name: '', brand:'', price:''}
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  Box,
+  Typography,
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
+import { PcContext } from "../../App";
+import { mycartStyles } from "./mycartStyles";
 
 const MyCart = () => {
-  const { 
-    arrPCs,
-    selectedMotherboard,
-    selectedCpu,
-    selectedRam,    
-    setArrPCs,
-    setSelectedMotherboard,
-    setSelectedCpu,
-    setSelectedRam
-  } = useContext(PcContext);
-  
+  const { arrPCs, setArrPCs } = useContext(PcContext);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (selectedMotherboard === pcPart || selectedCpu === pcPart || selectedRam === pcPart){
-      return;
-    }
-    setArrPCs([...arrPCs, { motherboard: selectedMotherboard, cpu: selectedCpu, ram: selectedRam }]);
-    setSelectedMotherboard(pcPart);
-    setSelectedCpu(pcPart);
-    setSelectedRam(pcPart);
-  }, []);
-
   const addMore = () => {
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   const removePC = (id: number) => {
     if (id !== -1) {
       setArrPCs(arrPCs.filter((_, i) => i !== id));
     }
-  }
+  };
 
   return (
-    <>
-      <h1>My Cart</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>Part</td>
-            <td>Name</td>
-            <td>Price</td>
-            <td></td>
-          </tr>
-          {arrPCs.map((pc, index) => (
-            <>
-              <tr>
-              <td>Motherboard</td>
-              <td>{pc.motherboard.name}</td>
-              <td>{pc.motherboard.price}</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>CPU</td>
-              <td>{pc.cpu.name}</td>
-              <td>{pc.cpu.price}</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>RAM</td>
-              <td>{pc.ram.name}</td>
-              <td>{pc.ram.price}</td>
-              <td>
-                <button onClick={() => removePC(index)}>Remove PC</button>
-              </td>
-            </tr>
-            <tr><td><hr></hr></td><td><hr></hr></td><td><hr></hr></td><td><hr></hr></td></tr>
-            </>
+    <Box sx={() => ({ ...mycartStyles })}>
+      <Typography className="typoHeader" variant="h4" gutterBottom>
+        My Cart
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table className="table" aria-label="simple table">
+          <TableHead>
+            <TableRow key={"headerRow"} sx={{ borderBottom: 2 }}>
+              <TableCell key={"header-part"}>Part</TableCell>
+              <TableCell key={"header-name"}>Name</TableCell>
+              <TableCell key={"header-price"} align="right">
+                Price
+              </TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          </TableHead>
+          {arrPCs?.map((pc, index) => (
+            <TableBody key={index}>
+              <TableRow key={"motherboard" + index}>
+                <TableCell component="th" scope="row">
+                  {"Motherboard"}
+                </TableCell>
+                <TableCell>{pc.motherboard.name}</TableCell>
+                <TableCell align="right">{pc.motherboard.price}</TableCell>
+              </TableRow>
+
+              <TableRow key={"cpu" + index}>
+                <TableCell component="th" scope="row">
+                  {"CPU"}
+                </TableCell>
+                <TableCell>{pc.cpu.name}</TableCell>
+                <TableCell align="right">{pc.cpu.price}</TableCell>
+              </TableRow>
+
+              <TableRow key={"ram" + index} sx={{ borderBottom: 2 }}>
+                <TableCell component="th" scope="row">
+                  {"RAM"}
+                </TableCell>
+                <TableCell>{pc.ram.name}</TableCell>
+                <TableCell align="right">{pc.ram.price}</TableCell>
+                <TableCell align="right">
+                  <Button onClick={() => removePC(index)}>Remove</Button>
+                </TableCell>
+              </TableRow>
+            </TableBody>
           ))}
-          
-        </tbody>
-      </table>
-      <button onClick={addMore}>Add more PC</button>
-    </>
+        </Table>
+      </TableContainer>
+
+      <Box className="buttonBox">
+        <Button
+          key={"buttonjj"}
+          variant="contained"
+          className="textButtonStyle"
+          onClick={addMore}
+        >
+          Add more PC
+        </Button>
+      </Box>
+    </Box>
   );
 };
 
